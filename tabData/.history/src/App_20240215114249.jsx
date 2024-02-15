@@ -18,7 +18,7 @@ const tabData = [
     content: "Create new payment for the user 💰",
   },
 ];
- console.log(tabData);
+console.log(tabData);
 
 function App() {
   const [activeTab, setActiveTab] = useState(1);
