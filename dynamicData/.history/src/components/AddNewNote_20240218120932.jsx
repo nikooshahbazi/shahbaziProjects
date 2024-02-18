@@ -6,19 +6,20 @@ function AddNewNote({ onAddNote }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!title || !description) return null;
-
     const newNote = {
+      // ==> for give new Data
       title,
       description,
       id: Date.now(),
       completed: false,
       createdAt: new Date().toISOString(),
     };
-    onAddNote(newNote);
+    onAddNote(new)
     setTitle("");
     setDescription("");
+
+    console.log(newNote);
   };
 
   return (

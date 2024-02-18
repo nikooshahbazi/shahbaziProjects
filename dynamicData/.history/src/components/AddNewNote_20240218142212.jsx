@@ -16,8 +16,8 @@ function AddNewNote({ onAddNote }) {
       completed: false,
       createdAt: new Date().toISOString(),
     };
-    onAddNote(newNote);
-    setTitle("");
+    dispatch({ type: "add", payload: newNote });
+    setTtile("");
     setDescription("");
   };
 

@@ -1,11 +1,11 @@
 function NoteList({ notes }) {
   //console.log(notes + "nikoo");
-  return (
+  return ( 
     <div className="note-list">
-      {notes.map((note) => (
-        <NoteItem key={note.id} note={note} />
-      ))}
-    </div>
+    {notes.map((note) => (
+      <NoteItem key={note.id} note={note} />
+    ))}
+  </div>
   );
 }
 
@@ -19,14 +19,12 @@ function NoteItem(note) {
   };
 
   //   console.log("nikoo")
-  console.log(note.title + "title");
-  console.log(note.description + "desc");
   return (
     <div className="note-item">
       <div className="note-item__header">
         <div>
-          <p className="title">{note?.title}</p>
-          <p className="description">{note?.description}</p>
+          <p className="title">{note.title}</p>
+          <p className="description">{note.description}</p>
         </div>
         <div className="actions">
           <button>❌</button>
@@ -34,7 +32,7 @@ function NoteItem(note) {
         </div>
       </div>
       <div className="note item__footer">
-        {new Date(note.createdAt).toLocaleDateString("en-US", options)}
+         {new Date(note.createdAt).toLocaleDateString("en-US", options)}
       </div>
     </div>
   );

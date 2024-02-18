@@ -14,7 +14,7 @@ function AddNewNote({ onAddNote }) {
       description,
       id: Date.now(),
       completed: false,
-      createdAt: new Date().toISOString(),
+      createdAt: newDate().toISOString(),
     };
     onAddNote(newNote);
     setTitle("");

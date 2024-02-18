@@ -4,7 +4,7 @@ function AddNewNote({ onAddNote }) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
-  const handleSubmit = (e) => {
+   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!title || !description) return null;
@@ -16,8 +16,8 @@ function AddNewNote({ onAddNote }) {
       completed: false,
       createdAt: new Date().toISOString(),
     };
-    onAddNote(newNote);
-    setTitle("");
+    dispatch({ type: "add", payload: newNote });
+    setTtile("");
     setDescription("");
   };
 

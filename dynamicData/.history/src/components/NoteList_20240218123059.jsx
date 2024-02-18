@@ -1,10 +1,10 @@
-function NoteList({ notes }) {
+function NoteList( {notes}) {
   //console.log(notes + "nikoo");
   return (
     <div className="note-list">
-      {notes.map((note) => (
-        <NoteItem key={note.id} note={note} />
-      ))}
+      {notes.map((note) => {
+        <NoteItem key={note.id} note={note} />;
+      })}
     </div>
   );
 }
@@ -19,14 +19,12 @@ function NoteItem(note) {
   };
 
   //   console.log("nikoo")
-  console.log(note.title + "title");
-  console.log(note.description + "desc");
   return (
     <div className="note-item">
       <div className="note-item__header">
         <div>
-          <p className="title">{note?.title}</p>
-          <p className="description">{note?.description}</p>
+          <p className="title">{note.title}</p>
+          <p className="description">{description}</p>
         </div>
         <div className="actions">
           <button>❌</button>
