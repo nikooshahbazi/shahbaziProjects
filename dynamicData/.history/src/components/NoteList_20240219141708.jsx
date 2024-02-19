@@ -1,4 +1,7 @@
+
+
 function NoteList({ notes }) {
+  //console.log(notes + "nikoo");
   return (
     <div className="note-list">
       {notes.map((note) => {
@@ -8,15 +11,17 @@ function NoteList({ notes }) {
   );
 }
 
+
 export default NoteList;
 
-function NoteItem({note}) {
+function NoteItem(note) {
   const options = {
     year: "numeric",
     month: "long",
     day: "numeric",
   };
-
+  console.log(typeof note.title + "title");
+  console.log(typeof note.description + "desc");
   return (
     <div className="note-item">
       <div className="note-item__header">

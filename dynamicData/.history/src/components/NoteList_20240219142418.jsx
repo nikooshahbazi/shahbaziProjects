@@ -16,7 +16,8 @@ function NoteItem({note}) {
     month: "long",
     day: "numeric",
   };
-
+  console.log(typeof note.title + "title");
+  console.log(typeof note.description + "desc");
   return (
     <div className="note-item">
       <div className="note-item__header">
