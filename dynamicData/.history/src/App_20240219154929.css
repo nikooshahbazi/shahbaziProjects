@@ -55,7 +55,7 @@
   margin-bottom: 1.5rem;
 }
 
-.note-item__header {
+. {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -100,5 +100,4 @@
 
 .note-item__footer {
   color: var(--text-300);
-  text-align: left !important;
 }

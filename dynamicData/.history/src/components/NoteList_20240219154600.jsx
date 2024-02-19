@@ -22,14 +22,14 @@ function NoteItem({note}) {
       <div className="note-item__header">
         <div>
           <p className="title">{note?.title}</p>
-          <p className="desc">{note?.description}</p>
+          <p className="description">{note?.description}</p>
         </div>
         <div className="actions">
           <button>❌</button>
           <input type="checkbox" name="" id=""></input>
         </div>
       </div>
-      <div className="note-item__footer">
+      <div className="note item__footer">
         {new Date(note.createdAt).toLocaleDateString("en-US", options)}
       </div>
     </div>

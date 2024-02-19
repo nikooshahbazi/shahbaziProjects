@@ -100,5 +100,5 @@
 
 .note-item__footer {
   color: var(--text-300);
-  text-align: left !important;
+  text-align: left;
 }

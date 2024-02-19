@@ -29,7 +29,7 @@ function NoteItem({note}) {
           <input type="checkbox" name="" id=""></input>
         </div>
       </div>
-      <div className="note-item__footer">
+      <div className="note-item__header">
         {new Date(note.createdAt).toLocaleDateString("en-US", options)}
       </div>
     </div>
