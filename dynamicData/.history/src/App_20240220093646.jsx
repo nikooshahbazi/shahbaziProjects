@@ -12,7 +12,7 @@ function App() {
 
   const handleDelteNote = (id) => {
     const filterDeleteItem = notes.filter((n) => n.id !== id);
-    setNotes(filterDeleteItem);
+    setNotes([...notes, filterDeleteItem]);
   };
 
   return (

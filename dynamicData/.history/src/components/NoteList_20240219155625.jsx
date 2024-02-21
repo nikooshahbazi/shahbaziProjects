@@ -1,10 +1,19 @@
-function NoteList({ notes, onDeleteNote }) {
+import { useState } from "react";
+
+function NoteList({ notes }) {
+
+  const[removeItem , setRemoveItem] = useState("");
+
+  
+
+
+
+
+
   return (
     <div className="note-container">
       {notes.map((note) => {
-        return (
-          <NoteItem key={note.id} note={note} onDeleteNote={onDeleteNote} />
-        );
+        return <NoteItem key={note.id} note={note} />;
       })}
     </div>
   );
@@ -12,7 +21,7 @@ function NoteList({ notes, onDeleteNote }) {
 
 export default NoteList;
 
-function NoteItem({ note, onDeleteNote }) {
+function NoteItem({note}) {
   const options = {
     year: "numeric",
     month: "long",
@@ -27,7 +36,7 @@ function NoteItem({ note, onDeleteNote }) {
           <p className="desc">{note?.description}</p>
         </div>
         <div className="actions">
-          <button onClick={() => onDeleteNote(note.id)}>❌</button>
+          <button>❌</button>
           <input type="checkbox" name="" id=""></input>
         </div>
       </div>

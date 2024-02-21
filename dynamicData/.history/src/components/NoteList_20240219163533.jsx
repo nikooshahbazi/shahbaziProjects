@@ -27,7 +27,7 @@ function NoteItem({ note, onDeleteNote }) {
           <p className="desc">{note?.description}</p>
         </div>
         <div className="actions">
-          <button onClick={() => onDeleteNote(note.id)}>❌</button>
+          <button onClick={onDeleteNote}>❌</button>
           <input type="checkbox" name="" id=""></input>
         </div>
       </div>

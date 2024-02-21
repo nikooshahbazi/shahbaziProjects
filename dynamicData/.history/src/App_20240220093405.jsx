@@ -11,16 +11,15 @@ function App() {
   };
 
   const handleDelteNote = (id) => {
-    const filterDeleteItem = notes.filter((n) => n.id !== id);
-    setNotes(filterDeleteItem);
-  };
+    
+  }
 
   return (
     <div className="container">
       <div className="note-header">note header</div>
       <div className="note-app">
         <AddNewNote onAddNote={handleAddNotes} />
-        <NoteList notes={notes} onDeleteNote={handleDelteNote} />
+        <NoteList notes={notes}  onDeleteNote={handleDelteNote}/>
       </div>
     </div>
   );
