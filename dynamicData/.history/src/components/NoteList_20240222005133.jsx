@@ -34,10 +34,9 @@ function NoteItem({ note, onDeleteNote, onCompletedNote }) {
           <button onClick={() => onDeleteNote(note.id)}>❌</button>
           <input
             type="checkbox"
-            name={note.id}
-            id={note.id}
-            value={note.id}
-            onChange={onCompletedNote}
+           name={note.id}
+           id={note.}
+            
           ></input>
         </div>
       </div>

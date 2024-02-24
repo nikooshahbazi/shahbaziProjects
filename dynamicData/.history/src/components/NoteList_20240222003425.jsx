@@ -1,14 +1,9 @@
-function NoteList({ notes, onDeleteNote, onCompletedNote }) {
+function NoteList({ notes, onDeleteNote , onCompletedNote}) {
   return (
     <div className="note-container">
       {notes.map((note) => {
         return (
-          <NoteItem
-            key={note.id}
-            note={note}
-            onDeleteNote={onDeleteNote}
-            onCompletedNote={onCompletedNote}
-          />
+          <NoteItem key={note.id} note={note} onDeleteNote={onDeleteNote} onCompletedNote={onCompletedNote}/>
         );
       })}
     </div>
@@ -16,6 +11,7 @@ function NoteList({ notes, onDeleteNote, onCompletedNote }) {
 }
 
 export default NoteList;
+
 function NoteItem({ note, onDeleteNote, onCompletedNote }) {
   const options = {
     year: "numeric",
@@ -32,13 +28,7 @@ function NoteItem({ note, onDeleteNote, onCompletedNote }) {
         </div>
         <div className="actions">
           <button onClick={() => onDeleteNote(note.id)}>❌</button>
-          <input
-            type="checkbox"
-            name={note.id}
-            id={note.id}
-            value={note.id}
-            onChange={onCompletedNote}
-          ></input>
+          <input type="checkbox" name="" id=""></input>
         </div>
       </div>
       <div className="note-item__footer">

@@ -32,13 +32,7 @@ function NoteItem({ note, onDeleteNote, onCompletedNote }) {
         </div>
         <div className="actions">
           <button onClick={() => onDeleteNote(note.id)}>❌</button>
-          <input
-            type="checkbox"
-            name={note.id}
-            id={note.id}
-            value={note.id}
-            onChange={onCompletedNote}
-          ></input>
+          <input type="checkbox" name={note.id} id={note.id} value={note.id} onChange={onCompletedNote}></input>
         </div>
       </div>
       <div className="note-item__footer">

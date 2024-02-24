@@ -5,7 +5,7 @@ import NoteList from "./components/NoteList";
 
 function App() {
   const [notes, setNotes] = useState([]);
-  //میگن هر قسمتی که استیت بود سعی کنید همونجا استیت رو اپدیت کنید
+  //میگن هر قسمتی که استیت بود سعی کنید همون قسمت استیت رو آپدیت کنید
   const handleAddNotes = (newNote) => {
     setNotes((prevNotes) => [...prevNotes, newNote]);
   };

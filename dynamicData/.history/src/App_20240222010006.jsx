@@ -5,7 +5,7 @@ import NoteList from "./components/NoteList";
 
 function App() {
   const [notes, setNotes] = useState([]);
-  //میگن هر قسمتی که استیت بود سعی کنید همونجا استیت رو اپدیت کنید
+  // میگن هرقسمتی که استیت بود سعی کنید همونجا استیت آپدیت بشه
   const handleAddNotes = (newNote) => {
     setNotes((prevNotes) => [...prevNotes, newNote]);
   };
@@ -17,10 +17,9 @@ function App() {
   };
   const handleCompletedNote = (e) => {
     const numberNoteId = Number(e.target.value);
-    const checked = notes.map((note) =>
-      note.id == numberNoteId ? { ...note, completed: !note.completed } : note
-    );
-    setNotes(checked);
+    const cheched = notes.map((note) => 
+      note.id == numberNoteId ? { ...note , completed : !note.completed} : note)
+      setNotes(cheched);
   };
 
   return (

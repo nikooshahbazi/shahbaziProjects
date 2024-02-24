@@ -5,7 +5,7 @@ import NoteList from "./components/NoteList";
 
 function App() {
   const [notes, setNotes] = useState([]);
-  //میگن هر قسمتی که استیت بود سعی کنید همونجا استیت رو اپدیت کنید
+  // میگن هرقسمتی که استیت بود سعی کنید همونجا استیت آپدیت بشه
   const handleAddNotes = (newNote) => {
     setNotes((prevNotes) => [...prevNotes, newNote]);
   };
@@ -21,10 +21,11 @@ function App() {
       note.id == numberNoteId ? { ...note, completed: !note.completed } : note
     );
     setNotes(checked);
+    
   };
 
   return (
-    <div className="container">
+   <
       <div className="note-header">note header</div>
       <div className="note-app">
         <AddNewNote onAddNote={handleAddNotes} />
