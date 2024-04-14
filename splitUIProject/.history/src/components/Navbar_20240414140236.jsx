@@ -5,7 +5,7 @@ function Navbar({ children }) {
     <nav className="navbar">
       <Logo />
       {children}
-     
+     zzzYY
     </nav>
   );
 }
@@ -35,7 +35,7 @@ export function Favorite({numOfFavorites}) {
   return (
     <button className="heart">
       <HeartIcon className="icon" />
-      <span className="badge">{numOfFavorites}</span>
+      <span className="badge">4</span>
     </button>
   );
 }

@@ -5,7 +5,7 @@ function Navbar({ children }) {
     <nav className="navbar">
       <Logo />
       {children}
-     
+     zzzYY
     </nav>
   );
 }

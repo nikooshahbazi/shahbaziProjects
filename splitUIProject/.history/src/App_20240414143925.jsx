@@ -58,7 +58,8 @@ function App() {
     setFavorites((prevFav) => [...prevFav, char]);
   };
   const isAddedToFavorite = favorites.map((fav) => fav.id).includes(selectedID);
-  //[1,2,3]
+    //[1,2,3]
+  });
 
   //console.log(selectedID);
   return (

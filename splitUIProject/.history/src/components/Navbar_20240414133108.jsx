@@ -31,11 +31,11 @@ export function SearchResult({ numOfResult }) {
   return <div className="navbar__result">Found {numOfResult} characters</div>;
 }
 
-export function Favorite({numOfFavorites}) {
+ function Favorite() {
   return (
     <button className="heart">
       <HeartIcon className="icon" />
-      <span className="badge">{numOfFavorites}</span>
+      <span className="badge">4</span>
     </button>
   );
 }

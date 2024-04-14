@@ -79,12 +79,7 @@ function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
               {isAddedToFavorite ? (
                 <p>Already to Favorites</p>
               ) : (
-                <button
-                  onClick={() => onAddFavorite(character)}
-                  className="btn btn--primary"
-                >
-                  Add to Favorite
-                </button>
+               
               )}
             </div>
           </div>

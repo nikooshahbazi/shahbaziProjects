@@ -1,6 +1,6 @@
 import { HeartIcon } from "@heroicons/react/24/outline";
 
-function Navbar({ children }) {
+function Navbar({ children , numOfFavorites }) {
   return (
     <nav className="navbar">
       <Logo />

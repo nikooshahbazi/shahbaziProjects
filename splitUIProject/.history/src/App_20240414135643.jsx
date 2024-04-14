@@ -57,17 +57,17 @@ function App() {
   const handleAddFavorites = (char) => {
     setFavorites((prevFav) => [...prevFav, char]);
   };
-  const isAddedToFavorite = favorites.map((fav) => fav.id).includes(selectedID);
-  //[1,2,3]
-
+  const isAddedToFavorite = favorites.map((fav) => {
+    return fav.id.includes(selectedID); //[1,2,3]
+  });
   //console.log(selectedID);
   return (
     <div className="app">
       <Toaster />
       <Navbar>
+        <Favorite numOfFavorites={favorites.length} />
         <Search query={query} setQuery={setQuery} />
         <SearchResult numOfResult={characters.length} />
-        <Favorite numOfFavorites={favorites.length} />
       </Navbar>
       <Main>
         <CharacterList

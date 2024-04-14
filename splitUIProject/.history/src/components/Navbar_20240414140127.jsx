@@ -35,7 +35,7 @@ export function Favorite({numOfFavorites}) {
   return (
     <button className="heart">
       <HeartIcon className="icon" />
-      <span className="badge">{numOfFavorites}</span>
+      <span className="badge">{num}</span>
     </button>
   );
 }

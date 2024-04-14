@@ -54,20 +54,14 @@ function App() {
   const handleSelectCharacter = (id) => {
     setSelectedID((prevId) => (prevId === id ? null : id));
   };
-  const handleAddFavorites = (char) => {
-    setFavorites((prevFav) => [...prevFav, char]);
-  };
-  const isAddedToFavorite = favorites.map((fav) => fav.id).includes(selectedID);
-  //[1,2,3]
-
-  //console.log(selectedID);
+  console.log(selectedID);
   return (
     <div className="app">
       <Toaster />
       <Navbar>
+        <Favorite numOfFavorites={favorites.length} />
         <Search query={query} setQuery={setQuery} />
         <SearchResult numOfResult={characters.length} />
-        <Favorite numOfFavorites={favorites.length} />
       </Navbar>
       <Main>
         <CharacterList
@@ -76,11 +70,7 @@ function App() {
           characters={characters}
           isLoading={isLoading}
         />
-        <CharacterDetail
-          selectedID={selectedID}
-          onAddFavorite={handleAddFavorites}
-          isAddedToFavorite={isAddedToFavorite}
-        />
+        <CharacterDetail selectedID={selectedID} />
       </Main>
     </div>
   );

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import CharacterDetail from "./components/CharacterDetail";
 import CharacterList from "./components/CharacterList";
-import Navbar, { Favorite, Search, SearchResult } from "./components/Navbar";
+import Navbar, { Search, SearchResult } from "./components/Navbar";
 import { allCharacters } from "./data/data";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
@@ -12,7 +12,7 @@ function App() {
   //loading before fetch data:
   const [isLoading, setIsLoading] = useState(false);
   const [query, setQuery] = useState("");
-  const [favorites, setFavorites] = useState([]);
+  const [favo]
 
   useEffect(() => {
     async function fetchData() {
@@ -50,37 +50,26 @@ function App() {
   //     })
   //     .finally(() => setIsLoading(false));
   // }, []);
-  const [selectedID, setSelectedID] = useState(null);
+const [selectedID , setSelectedID] = useState(null);
   const handleSelectCharacter = (id) => {
-    setSelectedID((prevId) => (prevId === id ? null : id));
+    setSelectedID(prevId => prevId === id ? null : id)
   };
-  const handleAddFavorites = (char) => {
-    setFavorites((prevFav) => [...prevFav, char]);
-  };
-  const isAddedToFavorite = favorites.map((fav) => fav.id).includes(selectedID);
-  //[1,2,3]
-
-  //console.log(selectedID);
+  console.log(selectedID);
   return (
     <div className="app">
       <Toaster />
       <Navbar>
         <Search query={query} setQuery={setQuery} />
         <SearchResult numOfResult={characters.length} />
-        <Favorite numOfFavorites={favorites.length} />
       </Navbar>
       <Main>
         <CharacterList
-          selectedID={selectedID}
+        selectedID={selectedID}
           onSelectCharacter={handleSelectCharacter}
           characters={characters}
           isLoading={isLoading}
         />
-        <CharacterDetail
-          selectedID={selectedID}
-          onAddFavorite={handleAddFavorites}
-          isAddedToFavorite={isAddedToFavorite}
-        />
+        <CharacterDetail selectedID={selectedID} />
       </Main>
     </div>
   );
