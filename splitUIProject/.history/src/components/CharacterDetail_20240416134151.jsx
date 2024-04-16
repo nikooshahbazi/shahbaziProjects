@@ -55,8 +55,7 @@ function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
     <div style={{ flex: 1 }}>
       <CharacterSubInfo
         character={character}
-        isAddedToFavorite={isAddedToFavorite}
-        onAddFavorite={onAddFavorite}
+        isAddedToFavorite={isAddedToFavorite}onAddFavorite
       />
       <EpisodesList episodes={episodes} />
     </div>

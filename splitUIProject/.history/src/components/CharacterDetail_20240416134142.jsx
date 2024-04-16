@@ -56,7 +56,6 @@ function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
       <CharacterSubInfo
         character={character}
         isAddedToFavorite={isAddedToFavorite}
-        onAddFavorite={onAddFavorite}
       />
       <EpisodesList episodes={episodes} />
     </div>

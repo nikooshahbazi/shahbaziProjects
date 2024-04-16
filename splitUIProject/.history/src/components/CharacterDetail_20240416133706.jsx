@@ -56,7 +56,6 @@ function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
       <CharacterSubInfo
         character={character}
         isAddedToFavorite={isAddedToFavorite}
-        onAddFavorite={onAddFavorite}
       />
       <EpisodesList episodes={episodes} />
     </div>
@@ -65,7 +64,7 @@ function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
 
 export default CharacterDetail;
 
-function CharacterSubInfo({ character, isAddedToFavorite  , onAddFavorite}) {
+function CharacterSubInfo({ character, isAddedToFavorite }) {
   return (
     <div className="character-detail">
       <img
@@ -125,7 +124,7 @@ function EpisodesList({ episodes }) {
       <div className="title">
         <h2>List of Episodes:</h2>
         <button onClick={() => setSortBy((is) => !is)}>
-          <ArrowUpCircleIcon className="icon" style={{rotate: sortBy? "0deg" : "180deg"}} />
+          <ArrowUpCircleIcon className="icon" style={{rotate: sortBy}} />
         </button>
       </div>
       <ul>

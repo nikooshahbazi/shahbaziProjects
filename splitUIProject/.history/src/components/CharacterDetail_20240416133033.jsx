@@ -56,7 +56,6 @@ function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
       <CharacterSubInfo
         character={character}
         isAddedToFavorite={isAddedToFavorite}
-        onAddFavorite={onAddFavorite}
       />
       <EpisodesList episodes={episodes} />
     </div>
@@ -65,7 +64,7 @@ function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
 
 export default CharacterDetail;
 
-function CharacterSubInfo({ character, isAddedToFavorite  , onAddFavorite}) {
+function CharacterSubInfo({ character, isAddedToFavorite }) {
   return (
     <div className="character-detail">
       <img
@@ -120,16 +119,21 @@ function EpisodesList({ episodes }) {
       (a, b) => new Date(b.created) - new Date(a.created)
     );
   }
+  // else{
+  //   sortedEpisodes = [...episodes].sort(
+  //     (a, b) => new Date(b.created) - new Date(a.created)
+  //   );
+  // }
   return (
     <div className="character-episodes">
       <div className="title">
         <h2>List of Episodes:</h2>
         <button onClick={() => setSortBy((is) => !is)}>
-          <ArrowUpCircleIcon className="icon" style={{rotate: sortBy? "0deg" : "180deg"}} />
+          <ArrowUpCircleIcon className="icon" />
         </button>
       </div>
       <ul>
-        {sortedEpisodes.map((episode, index) => (
+        {episodes.map((episode, index) => (
           <li key={episode.id}>
             <div>
               {String(index + 1).padStart(2, "0")} - {episode.episode} :{" "}

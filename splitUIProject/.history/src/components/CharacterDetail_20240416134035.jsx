@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import { character } from "../data/data";
 axios;
 
-function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
+function CharacterDetail({ selectedID, onAddFavorite }) {
   const [character, setCharacter] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [episodes, setEpisodes] = useState([]);
@@ -56,7 +56,6 @@ function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
       <CharacterSubInfo
         character={character}
         isAddedToFavorite={isAddedToFavorite}
-        onAddFavorite={onAddFavorite}
       />
       <EpisodesList episodes={episodes} />
     </div>
@@ -65,7 +64,7 @@ function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
 
 export default CharacterDetail;
 
-function CharacterSubInfo({ character, isAddedToFavorite  , onAddFavorite}) {
+function CharacterSubInfo({ character, isAddedToFavorite }) {
   return (
     <div className="character-detail">
       <img

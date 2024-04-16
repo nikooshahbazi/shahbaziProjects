@@ -73,7 +73,7 @@ function App() {
     <div className="app">
       <div style={{ color: "#fff" }}>{count}</div>
       <Toaster />
-      <Modal title="this  title"  open={false}>
+      <Modal title="this  title"  open={true}>
         this is modal
       </Modal>
       <Navbar>

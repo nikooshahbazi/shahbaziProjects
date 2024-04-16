@@ -73,13 +73,11 @@ function App() {
     <div className="app">
       <div style={{ color: "#fff" }}>{count}</div>
       <Toaster />
-      <Modal title="this  title"  open={false}>
-        this is modal
-      </Modal>
+      <Modal />
       <Navbar>
         <Search query={query} setQuery={setQuery} />
         <SearchResult numOfResult={characters.length} />
-        <Favorite favorites={favorites} />
+        <Favorite numOfFavorites={favorites.length} />
       </Navbar>
       <Main>
         <CharacterList
