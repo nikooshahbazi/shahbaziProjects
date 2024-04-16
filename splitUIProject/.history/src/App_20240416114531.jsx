@@ -70,7 +70,6 @@ function App() {
   //console.log(selectedID);
   return (
     <div className="app">
-      <div style={{ color: "#fff" }}>{count}</div>
       <Toaster />
       <Navbar>
         <Search query={query} setQuery={setQuery} />

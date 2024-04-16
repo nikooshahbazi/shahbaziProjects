@@ -13,7 +13,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [query, setQuery] = useState("");
   const [favorites, setFavorites] = useState([]);
-  const [count, setCount] = useState(0);
+  const [count , setCount] = useState(0)
   useEffect(() => {
     async function fetchData() {
       try {
@@ -37,13 +37,6 @@ function App() {
     }
     fetchData();
   }, [query]);
-
-  useEffect(() => {
-    const interval = setInterval(() => setCount((c) => c + 1), 1000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [count]);
 
   // useEffect(() => {
   //   setIsLoading(true);
@@ -70,7 +63,6 @@ function App() {
   //console.log(selectedID);
   return (
     <div className="app">
-      <div style={{ color: "#fff" }}>{count}</div>
       <Toaster />
       <Navbar>
         <Search query={query} setQuery={setQuery} />

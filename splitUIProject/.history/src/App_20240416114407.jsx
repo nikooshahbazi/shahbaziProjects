@@ -39,10 +39,8 @@ function App() {
   }, [query]);
 
   useEffect(() => {
-    const interval = setInterval(() => setCount((c) => c + 1), 1000);
-    return () => {
-      clearInterval(interval);
-    };
+    const interval = setInterval(() => setCount((c) => c + 1), 1000),
+    return 
   }, [count]);
 
   // useEffect(() => {
@@ -70,7 +68,6 @@ function App() {
   //console.log(selectedID);
   return (
     <div className="app">
-      <div style={{ color: "#fff" }}>{count}</div>
       <Toaster />
       <Navbar>
         <Search query={query} setQuery={setQuery} />

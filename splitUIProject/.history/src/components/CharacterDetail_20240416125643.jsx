@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader";
 import toast from "react-hot-toast";
-import { character } from "../data/data";
 axios;
 
 function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
@@ -57,7 +56,7 @@ function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
         character={character}
         isAddedToFavorite={isAddedToFavorite}
       />
-      <EpisodesList episodes={episodes} />
+      <EpisodesList />
     </div>
   );
 }
@@ -108,22 +107,11 @@ function CharacterSubInfo({ character, isAddedToFavorite }) {
 }
 
 function EpisodesList({ episodes }) {
-  const [sortBy, setSortBy] = useState(true);
-  let sortedEpisodes;
-  if (sortBy) {
-    sortedEpisodes = [...episodes].sort(
-      (a, b) => new Date(a.created) - new Date(b.created)
-    );
-  } else {
-    sortedEpisodes = [...episodes].sort(
-      (a, b) => new Date(b.created) - new Date(a.created)
-    );
-  }
   return (
     <div className="character-episodes">
       <div className="title">
         <h2>List of Episodes:</h2>
-        <button onClick={() => setSortBy((is) => !is)}>
+        <button>
           <ArrowUpCircleIcon className="icon" />
         </button>
       </div>

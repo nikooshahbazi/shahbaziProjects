@@ -114,10 +114,9 @@ function EpisodesList({ episodes }) {
     sortedEpisodes = [...episodes].sort(
       (a, b) => new Date(a.created) - new Date(b.created)
     );
-  } else {
-    sortedEpisodes = [...episodes].sort(
-      (a, b) => new Date(b.created) - new Date(a.created)
-    );
+  }
+  else{
+    
   }
   return (
     <div className="character-episodes">

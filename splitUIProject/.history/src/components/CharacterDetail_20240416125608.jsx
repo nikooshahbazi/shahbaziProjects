@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader";
 import toast from "react-hot-toast";
-import { character } from "../data/data";
 axios;
 
 function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
@@ -53,18 +52,15 @@ function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
 
   return (
     <div style={{ flex: 1 }}>
-      <CharacterSubInfo
-        character={character}
-        isAddedToFavorite={isAddedToFavorite}
-      />
-      <EpisodesList episodes={episodes} />
+      <CharacterSubInfo  character={character} isAddedToFavorite={isAddedToFavorite}/>
+     
     </div>
   );
 }
 
 export default CharacterDetail;
 
-function CharacterSubInfo({ character, isAddedToFavorite }) {
+function CharacterSubInfo( {character , isAddedToFavorite}) {
   return (
     <div className="character-detail">
       <img
@@ -107,37 +103,4 @@ function CharacterSubInfo({ character, isAddedToFavorite }) {
   );
 }
 
-function EpisodesList({ episodes }) {
-  const [sortBy, setSortBy] = useState(true);
-  let sortedEpisodes;
-  if (sortBy) {
-    sortedEpisodes = [...episodes].sort(
-      (a, b) => new Date(a.created) - new Date(b.created)
-    );
-  } else {
-    sortedEpisodes = [...episodes].sort(
-      (a, b) => new Date(b.created) - new Date(a.created)
-    );
-  }
-  return (
-    <div className="character-episodes">
-      <div className="title">
-        <h2>List of Episodes:</h2>
-        <button onClick={() => setSortBy((is) => !is)}>
-          <ArrowUpCircleIcon className="icon" />
-        </button>
-      </div>
-      <ul>
-        {episodes.map((episode, index) => (
-          <li key={episode.id}>
-            <div>
-              {String(index + 1).padStart(2, "0")} - {episode.episode} :{" "}
-              <strong>{episode.name}</strong>
-            </div>
-            <div className="badge badge--secondary">{episode.air_date}</div>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+function Episodes

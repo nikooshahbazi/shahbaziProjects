@@ -116,7 +116,7 @@ function EpisodesList({ episodes }) {
     );
   } else {
     sortedEpisodes = [...episodes].sort(
-      (a, b) => new Date(b.created) - new Date(a.created)
+      (a, b) => new Date(a.created) - new Date(b.created)
     );
   }
   return (
