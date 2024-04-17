@@ -12,7 +12,12 @@ function CharacterList({
         <Loader />
       ) : (
         characters.map((item) => (
-          <Character key={item.id} item={item}>
+          <Character
+            selectedID={selectedID}
+            key={item.id}
+            item={item}
+            onSelectCharacter={onSelectCharacter}
+          >
             <button
               className="icon red"
               onClick={() => onSelectCharacter(item.id)}

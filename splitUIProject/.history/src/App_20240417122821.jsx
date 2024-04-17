@@ -13,9 +13,8 @@ function App() {
   //loading before fetch data:
   const [isLoading, setIsLoading] = useState(false);
   const [query, setQuery] = useState("");
-  const [favorites, setFavorites] = useState(
-    () => JSON.parse(localStorage.getItem("FAVORITES")) || []
-  );
+  const [favorites, setFavorites] = useState(() =>
+    JSON.parse(localStorage.getItem("FAVORITES")) || []);
   const [count, setCount] = useState(0);
   useEffect(() => {
     async function fetchData() {
@@ -40,10 +39,6 @@ function App() {
     }
     fetchData();
   }, [query]);
-
-  useEffect(() => {
-    localStorage.setItem("FAVORITES", JSON.stringify(favorites));
-  }, [favorites]);
 
   useEffect(() => {
     const interval = setInterval(() => setCount((c) => c + 1), 1000);

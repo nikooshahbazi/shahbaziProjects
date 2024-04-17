@@ -12,7 +12,12 @@ function CharacterList({
         <Loader />
       ) : (
         characters.map((item) => (
-          <Character key={item.id} item={item}>
+          <Character
+            selectedID={selectedID}
+            key={item.id}
+            item={item}
+            onSelectCharacter={onSelectCharacter}
+          >
             <button
               className="icon red"
               onClick={() => onSelectCharacter(item.id)}
@@ -28,7 +33,7 @@ function CharacterList({
 
 export default CharacterList;
 
-export function Character({ item, children }) {
+export function Character({ item, children, onSelectCharacter, selectedID }) {
   return (
     <div className="list__item">
       <img src={item.image} alt={item.image} />

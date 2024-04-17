@@ -42,7 +42,7 @@ function App() {
   }, [query]);
 
   useEffect(() => {
-    localStorage.setItem("FAVORITES", JSON.stringify(favorites));
+    localStorage.setItem("FAVORITES", JSON.stringify(favorites ));
   }, [favorites]);
 
   useEffect(() => {

@@ -41,9 +41,7 @@ function App() {
     fetchData();
   }, [query]);
 
-  useEffect(() => {
-    localStorage.setItem("FAVORITES", JSON.stringify(favorites));
-  }, [favorites]);
+  useEffect(())
 
   useEffect(() => {
     const interval = setInterval(() => setCount((c) => c + 1), 1000);

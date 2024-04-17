@@ -33,7 +33,7 @@ export function SearchResult({ numOfResult }) {
   return <div className="navbar__result">Found {numOfResult} characters</div>;
 }
 
-export function Favorite({ favorites, deleteFavorite }) {
+export function Favorite({ favorites , deleteFavorite }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -41,10 +41,7 @@ export function Favorite({ favorites, deleteFavorite }) {
         {favorites.map((item) => {
           return (
             <Character key={item.id} item={item}>
-              <button
-                className="icon red"
-                onClick={() => deleteFavorite(item.id)}
-              >
+              <button className="icon red" onClick={() => deleteFavorite(foca)}>
                 <TrashIcon />
               </button>
             </Character>
