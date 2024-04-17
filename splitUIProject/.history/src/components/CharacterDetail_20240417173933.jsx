@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader";
 import toast from "react-hot-toast";
+import { character } from "../data/data";
 axios;
 
 function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
@@ -43,7 +44,7 @@ function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {
       </div>
     );
 
-  if (!character || !selectedID)
+  if (!selectedID)
     return (
       <div style={{ flex: 1, color: "var(--slate-300)" }}>
         Please select a character

@@ -16,13 +16,10 @@ function CharacterList({
     <div className="character-list">
       {characters.map((item) => (
         <Character key={item.id} item={item}>
-          <button
-            className="icon red"
-            onClick={() => onSelectCharacter(item.id)}
-          >
-            {selectedID == item.id ? <EyeSlashIcon /> : <EyeIcon />}
+          <button className="icon red" onClick={()=> onSelectCharacter(item.id)}>
+            
           </button>
-        </Character>
+           </Character>
       ))}
     </div>
   );

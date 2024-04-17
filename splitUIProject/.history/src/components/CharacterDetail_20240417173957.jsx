@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "./Loader";
 import toast from "react-hot-toast";
+import { character } from "../data/data";
 axios;
 
 function CharacterDetail({ selectedID, onAddFavorite, isAddedToFavorite }) {

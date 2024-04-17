@@ -13,18 +13,7 @@ function CharacterList({
       </div>
     );
   return (
-    <div className="character-list">
-      {characters.map((item) => (
-        <Character key={item.id} item={item}>
-          <button
-            className="icon red"
-            onClick={() => onSelectCharacter(item.id)}
-          >
-            {selectedID == item.id ? <EyeSlashIcon /> : <EyeIcon />}
-          </button>
-        </Character>
-      ))}
-    </div>
+   <div className="character-list"></div>
   );
 }
 

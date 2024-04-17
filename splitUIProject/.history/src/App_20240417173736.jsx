@@ -42,6 +42,7 @@ function App() {
   }, [query]);
 
   useEffect(() => {
+  useEffect(() => {
     localStorage.setItem("FAVORITES", JSON.stringify(favorites));
   }, [favorites]);
 
@@ -108,6 +109,7 @@ function App() {
 }
 
 export default App;
+
 function Main({ children }) {
   return <div className="main">{children}</div>;
 }

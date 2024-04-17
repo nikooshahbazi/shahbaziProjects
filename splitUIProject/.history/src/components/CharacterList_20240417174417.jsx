@@ -6,24 +6,23 @@ function CharacterList({
   onSelectCharacter,
   selectedID,
 }) {
-  if (isLoading)
-    return (
-      <div className="character-list">
-        <Loader />
-      </div>
-    );
   return (
-    <div className="character-list">
-      {characters.map((item) => (
-        <Character key={item.id} item={item}>
-          <button
-            className="icon red"
-            onClick={() => onSelectCharacter(item.id)}
-          >
-            {selectedID == item.id ? <EyeSlashIcon /> : <EyeIcon />}
-          </button>
-        </Character>
-      ))}
+    <div className="characters-list">
+      character.map(())
+      {isLoading ? (
+        <Loader />
+      ) : (
+        characters.map((item) => (
+          <Character key={item.id} item={item}>
+            <button
+              className="icon red"
+              onClick={() => onSelectCharacter(item.id)}
+            >
+              {selectedID == item.id ? <EyeSlashIcon /> : <EyeIcon />}
+            </button>
+          </Character>
+        ))
+      )}
     </div>
   );
 }
