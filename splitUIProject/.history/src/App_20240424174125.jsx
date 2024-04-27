@@ -3,16 +3,45 @@ import "./App.css";
 import CharacterDetail from "./components/CharacterDetail";
 import CharacterList from "./components/CharacterList";
 import Navbar, { Favorite, Search, SearchResult } from "./components/Navbar";
+import { allCharacters } from "./data/data";
+import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
 import Modal from "./components/Modal";
-import useCharaters from "./Hooks/useCharaters";
-import { Toaster } from "react-hot-toast";
 function App() {
+
+  
   const [query, setQuery] = useState("");
-  const { isLoading, characters } = useCharaters(query);
   const [favorites, setFavorites] = useState(
     () => JSON.parse(localStorage.getItem("FAVORITES")) || []
   );
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        setIsLoading(true);
+        const { data } = await axios.get(
+          `https://rickandmortyapi.com/api/character?name=${query}`
+        );
+        setCharacters(data.results.slice(0, 5));
+      } catch (err) {
+        setCharacters([]);
+        // console.log(err.response.data.error);
+        toast.error(err.response.data.error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
 
+    if (query.length < 3) {
+      setCharacters([]);
+      return;
+    }
+    fetchData();
+  }, [query]);
+
+  useEffect(() => {
+    localStorage.setItem("FAVORITES", JSON.stringify(favorites));
+  }, [favorites]);
 
   useEffect(() => {
     const interval = setInterval(() => setCount((c) => c + 1), 1000);

@@ -7,12 +7,15 @@ import Modal from "./components/Modal";
 import useCharaters from "./Hooks/useCharaters";
 import { Toaster } from "react-hot-toast";
 function App() {
-  const [query, setQuery] = useState("");
   const { isLoading, characters } = useCharaters(query);
+
   const [favorites, setFavorites] = useState(
     () => JSON.parse(localStorage.getItem("FAVORITES")) || []
   );
-
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    localStorage.setItem("FAVORITES", JSON.stringify(favorites));
+  }, [favorites]);
 
   useEffect(() => {
     const interval = setInterval(() => setCount((c) => c + 1), 1000);
