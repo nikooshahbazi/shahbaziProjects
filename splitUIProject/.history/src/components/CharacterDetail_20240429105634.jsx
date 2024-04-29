@@ -4,7 +4,7 @@ import axios from "axios";
 import Loader from "./Loader";
 import { toast } from "react-hot-toast";
 
-function CharacterDetail({ selectedId, onAddFavorite, isAddToFavorite }) {
+function CharacterDetail({ selectedId, onAddFavorite, isAddToFavourite }) {
   const [character, setCharacter] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [episodes, setEpisodes] = useState([]);
@@ -50,9 +50,9 @@ function CharacterDetail({ selectedId, onAddFavorite, isAddToFavorite }) {
   return (
     <div style={{ flex: 1 }}>
       <CharacterSubInfo
-        onAddFavorite={onAddFavorite}
+        onAddFavourite={onAddFavourite}
         character={character}
-        isAddToFavorite={isAddToFavorite}
+        isAddToFavourite={isAddToFavourite}
       />
       <EpisodeList episodes={episodes} />
     </div>
@@ -61,7 +61,7 @@ function CharacterDetail({ selectedId, onAddFavorite, isAddToFavorite }) {
 
 export default CharacterDetail;
 
-function CharacterSubInfo({ character, isAddToFavorite, onAddFavorite }) {
+function CharacterSubInfo({ character, isAddToFavourite, onAddFavourite }) {
   return (
     <div className="character-detail">
       <img
@@ -86,14 +86,14 @@ function CharacterSubInfo({ character, isAddToFavorite, onAddFavorite }) {
           <p>{character.location.name}</p>
         </div>
         <div className="actions">
-          {isAddToFavorite ? (
-            <p>Already Added To Favorites ✅</p>
+          {isAddToFavourite ? (
+            <p>Already Added To Favourites ✅</p>
           ) : (
             <button
-              onClick={() => onAddFavorite(character)}
+              onClick={() => onAddFavourite(character)}
               className="btn btn--primary"
             >
-              Add to Favorite
+              Add to Favourite
             </button>
           )}
         </div>

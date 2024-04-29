@@ -52,7 +52,7 @@ function CharacterDetail({ selectedId, onAddFavorite, isAddToFavorite }) {
       <CharacterSubInfo
         onAddFavorite={onAddFavorite}
         character={character}
-        isAddToFavorite={isAddToFavorite}
+        isAddToFavourite={isAddToFavorite}
       />
       <EpisodeList episodes={episodes} />
     </div>
@@ -61,7 +61,7 @@ function CharacterDetail({ selectedId, onAddFavorite, isAddToFavorite }) {
 
 export default CharacterDetail;
 
-function CharacterSubInfo({ character, isAddToFavorite, onAddFavorite }) {
+function CharacterSubInfo({ character, isAddToFavourite, onAddFavorite }) {
   return (
     <div className="character-detail">
       <img
@@ -86,14 +86,14 @@ function CharacterSubInfo({ character, isAddToFavorite, onAddFavorite }) {
           <p>{character.location.name}</p>
         </div>
         <div className="actions">
-          {isAddToFavorite ? (
-            <p>Already Added To Favorites ✅</p>
+          {isAddToFavourite ? (
+            <p>Already Added To Favourites ✅</p>
           ) : (
             <button
               onClick={() => onAddFavorite(character)}
               className="btn btn--primary"
             >
-              Add to Favorite
+              Add to Favourite
             </button>
           )}
         </div>

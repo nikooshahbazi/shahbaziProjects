@@ -47,7 +47,7 @@ function App() {
         <SearchResult numOfResult={characters.length} />
         <Favorite
           favorites={favorites}
-          deleteFavorite={handleDeleteFavorite}
+          onDeleteFavorite={handleDeleteFavorite}
         />
       </Navbar>
       <Main>

@@ -40,7 +40,7 @@ function CharacterDetail({ selectedId, onAddFavorite, isAddToFavorite }) {
       </div>
     );
 
-  if (!character || !selectedId)
+  if (!selectedId)
     return (
       <div style={{ flex: 1, color: "var(--slate-300)" }}>
         Please select a character.
