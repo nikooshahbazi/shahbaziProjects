@@ -15,7 +15,7 @@ function notesReducer(state, action) {
     }
     case "CompletedNote": {
       return state.map((note) =>
-        note.id === action.payload ? { ...note, completed: !note.completed } : note
+        note.id === action.payload ? { ...note, completed: !note.completed } : s
       );
     }
     default:
@@ -24,22 +24,22 @@ function notesReducer(state, action) {
 }
 function App() {
   // const [notes, setNotes] = useState([]);
-  const [notes, dispatch] = useReducer(notesReducer, []);
+  const [state, dispactch] = useReducer(notesReducer, []);
   const [sortBy, setSortBy] = useState("latest");
   //میگن هر قسمتی که استیت بود سعی کنید همونجا استیت رو اپدیت کنید
   const handleAddNotes = (newNote) => {
     // setNotes((prevNotes) => [...prevNotes, newNote]);
-    dispatch({ type: "AddNewNote", payload: newNote });
+    dispactch({ type: "AddNewNote", payload: newNote });
   };
 
   const handleDeleteNote = (id) => {
     // setNotes((prevNotes) => prevNotes.filter((n) => n.id !== id));
-    dispatch({ type: "DeleteNote", payload: id });
+    dispactch({ type: "DeleteNote", payload: id });
   };
 
   const handleCompletedNote = (e) => {
     const numberNoteID = Number(e.target.value);
-    dispatch({ type: "CompletedNote", payload: numberNoteID });
+    dispactch({ type: "CompletedNote", payload: numberNoteID });
     // const newNotes = notes.map((note) =>
     //   note.id === numberNoteID ? { ...note, completed: !note.completed } : note
     // );

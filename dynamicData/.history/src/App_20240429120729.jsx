@@ -39,7 +39,7 @@ function App() {
 
   const handleCompletedNote = (e) => {
     const numberNoteID = Number(e.target.value);
-    dispatch({ type: "CompletedNote", payload: numberNoteID });
+    dispactch({ type: "CompletedNote", payload: numberNoteID });
     // const newNotes = notes.map((note) =>
     //   note.id === numberNoteID ? { ...note, completed: !note.completed } : note
     // );
