@@ -1,0 +1,24 @@
+import React from "react";
+import { NavLink } from "react-router-dom";
+
+function AppNav() {
+  return (
+    <div>
+      <nav>
+        <ul>
+          <li>
+            <navLinkavLink href="/">Home</navLinkavLink>
+          </li>
+          <li>
+            <a href="/posts">Posts</a>
+          </li>
+          <li>
+            <a href="/dashboard">Dashboard</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+}
+
+export default AppNav;
