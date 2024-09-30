@@ -1,10 +1,9 @@
 import "./App.css";
-import Headers from "./components/header/Headers";
 
 function App() {
     return (
         <>
-            <Headers />
+            <div className="text-red-600">شروع پروژه</div>
         </>
     );
 }
