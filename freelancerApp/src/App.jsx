@@ -1,9 +1,17 @@
+//TanStack
+//یه ابزاری هست که شامل ریکت کوئری و اینا هست، یه ابزاری هست واسه مدیریت استیت ها
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Auth from "./pages/Auth";
 
 function App() {
     return (
         <>
-            <div className="text-red-600">شروع پروژه</div>
+            <div className="container xl:max-w-screen-xl">
+                <Routes>
+                    <Route path="/auth" element={<Auth />} />
+                </Routes>
+            </div>
         </>
     );
 }
