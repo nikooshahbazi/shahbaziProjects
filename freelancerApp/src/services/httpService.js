@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const app = axios.create({
-    baseURL: "http://localhost:5000/api",
+    baseURL: "https://jsonplaceholder.typicode.com",
     withCredentials: true,
 });
 
@@ -14,4 +14,3 @@ const http = {
 };
 
 export default http;
-
