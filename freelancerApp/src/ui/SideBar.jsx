@@ -10,9 +10,9 @@ function SideBar() {
                         <HiHome />
                         <span>خانه </span>
                     </NavlinkCustom>
-                    <NavlinkCustom to="/owner/todolists">
+                    <NavlinkCustom to="/owner/Products">
                         <HiCollection />
-                        <span>تسک‌ها</span>
+                        <span>محصولات</span>
                     </NavlinkCustom>
                 </li>
             </ul>

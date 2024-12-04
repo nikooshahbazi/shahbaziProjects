@@ -6,7 +6,7 @@ function AuthContainer() {
     const [step, setStep] = useState(2);
     const [phoneNumber, setPhoneNumber] = useState("");
 
-    console.log("step: " + step);
+    // console.log("step: " + step);
 
     const renderStep = () => {
         switch (step) {

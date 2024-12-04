@@ -9,8 +9,10 @@ import CompleteProfile from "./pages/CompleteProfile";
 import AppLayout from "./ui/AppLayout";
 import OwnerDashboard from "./pages/OwnerDashboard";
 
-import ToDoLists from "./pages/ToDoLists";
-import ToDoList from "./pages/ToDoList";
+import ProductsList from "./pages/Product";
+import ProductsListTable from "./pages/Products";
+import Products from "./pages/Products";
+import Product from "./pages/Product";
 
 function App() {
     const queryClient = new QueryClient();
@@ -32,8 +34,11 @@ function App() {
                             element={<Navigate to="dashboard" replace />}
                         />
                         <Route path="dashboard" element={<OwnerDashboard />} />
-                        <Route path="todolists" element={<ToDoLists />} />
-                        <Route path="todolists/:id" element={<ToDoList />} />
+                        <Route path="products" element={<Products />} />
+                        <Route
+                            path="products/:id"
+                            element={<Product />}
+                        />
                     </Route>
                 </Routes>
             </QueryClientProvider>

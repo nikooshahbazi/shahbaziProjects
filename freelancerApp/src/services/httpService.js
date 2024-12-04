@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const app = axios.create({
-    baseURL: "https://jsonplaceholder.typicode.com",
-    withCredentials: true,
+    baseURL: "https://dummyjson.com/",
+    // withCredentials: true,
 });
 
 const http = {

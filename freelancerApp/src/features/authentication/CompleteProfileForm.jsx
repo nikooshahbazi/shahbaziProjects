@@ -21,7 +21,7 @@ function CompleteProfileForm() {
                 email,
                 role,
             });
-            console.log(message);
+            // console.log(message);
             toast.success(message);
         } catch (error) {
             toast.error(error?.response?.data?.message);

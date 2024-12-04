@@ -109,3 +109,54 @@ body {
         @apply bg-red-500 text-white;
     }
 }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+table .title-row {
+    background-color: rgb(var(--color-secondary-100));
+}
+
+table td,
+table th {
+    border-bottom: 1px solid rgb(var(--color-secondary-200));
+    text-align: center;
+    white-space: nowrap;
+}
+
+table th {
+    padding: 0.6rem 1rem;
+    color: rgb(var(--color-secondary-600));
+    font-size: 0.9rem;
+}
+
+table td,
+tabe td svg {
+    font-size: 0.85rem;
+    padding: 1rem 3rem;
+    color: rgb(var(--color-secondary-600));
+}
+
+.pagination {
+    display: flex;
+    border: 1px solid #fff;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.pagination button {
+    padding: 35px;
+}
+
+.active {
+    background: black;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.btn-Pagination-notActive {
+    cursor: not-allowed !important;
+}
