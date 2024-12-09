@@ -1,6 +1,8 @@
 import { useState } from "react";
 
-function TextFied({ label, name, value, onChange }) {
+function TextFied({ label, name, register }) {
+    console.log(register);
+
     return (
         <div>
             <label className="mb-2 block " htmlFor={name}>
@@ -11,8 +13,6 @@ function TextFied({ label, name, value, onChange }) {
                 name="name"
                 className="textField_input"
                 type="text"
-                value={value}
-                onChange={onChange}
                 autoComplete="off"
             ></input>
         </div>
