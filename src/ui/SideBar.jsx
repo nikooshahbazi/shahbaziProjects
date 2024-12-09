@@ -8,11 +8,11 @@ function SideBar() {
                 <li>
                     <NavlinkCustom to="/owner/dashboard">
                         <HiHome />
-                        <span>خانه </span>
+                        <span>Home </span>
                     </NavlinkCustom>
                     <NavlinkCustom to="/owner/Products">
                         <HiCollection />
-                        <span>محصولات</span>
+                        <span>Products</span>
                     </NavlinkCustom>
                 </li>
             </ul>
