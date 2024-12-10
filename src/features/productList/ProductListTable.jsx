@@ -70,7 +70,7 @@ function ProductListTable() {
                                 {productlist.description}
                             </td>
                             <td>{productlist.category}</td>
-                            <td>{productlist.price}</td>
+                            <td>${productlist.price}</td>
                             <td>
                                 {productlist.images.length > 0 && (
                                     <img
@@ -89,24 +89,6 @@ function ProductListTable() {
                                     />
                                 )}
                             </td>
-                            {/* <td>
-                                {productlist.images?.map((image, index) => (
-                                    <>
-                                        <img
-                                            key={index}
-                                            onClick={() => openImage(image)}
-                                            src={image}
-                                            alt={`product Img ${index + 1}`}
-                                            style={{
-                                                width: "500px",
-                                                height: "auto",
-                                                margin: "5px",
-                                                cursor: "pointer",
-                                            }}
-                                        />
-                                    </>
-                                ))}
-                            </td> */}
                             <td>
                                 {productlist.availabilityStatus ===
                                 "Low Stock" ? (
