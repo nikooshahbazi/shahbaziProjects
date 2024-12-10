@@ -1,11 +1,10 @@
 import ProductListTable from "../features/productList/ProductListTable";
+import ProductsHeader from "../features/Products/ProductsHeader";
 
 function Products() {
     return (
         <div>
-            <div>
-                <button>Create New Product</button>
-            </div>
+            <ProductsHeader />
             <ProductListTable />
         </div>
     );
