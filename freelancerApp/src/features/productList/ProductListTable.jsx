@@ -49,8 +49,8 @@ function ProductListTable() {
                     <th>Description </th>
                     <th>Category </th>
                     <th>Price</th>
-                    <th>Image</th>
-                    <th>Stock</th>
+                    {/* <th>Image</th>
+                    <th>Stock</th> */}
                     <th>Operation</th>
                 </Table.Header>
 
@@ -71,7 +71,7 @@ function ProductListTable() {
                             </td>
                             <td>{productlist.category}</td>
                             <td>${productlist.price}</td>
-                            <td>
+                            {/* <td>
                                 {productlist.images.length > 0 && (
                                     <img
                                         key={index}
@@ -88,8 +88,8 @@ function ProductListTable() {
                                         }}
                                     />
                                 )}
-                            </td>
-                            <td>
+                            </td> */}
+                            {/* <td>
                                 {productlist.availabilityStatus ===
                                 "Low Stock" ? (
                                     <span className="badge badge--danger">
@@ -100,7 +100,7 @@ function ProductListTable() {
                                         more
                                     </span>
                                 )}
-                            </td>
+                            </td> */}
                             <td>
                                 <div className="flex items-center gap-x-4">
                                     <button

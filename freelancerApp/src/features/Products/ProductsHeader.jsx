@@ -15,7 +15,7 @@ function ProductsHeader() {
                 open={open}
                 onClose={() => setOpen(false)}
             >
-                <CreateProductsForm />
+                <CreateProductsForm onClose={() => setOpen(false)} />
             </Modal>
             <button
                 className="btn btn--primary flex items-center gap-x-2"

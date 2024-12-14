@@ -1,13 +1,36 @@
+import { TagsInput } from "react-tag-input-component";
+import RHFSelect from "../../ui/RHFSelect";
 import TextFied from "../../ui/TextFied";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
+import useCategories from "../Hooks/useCategoryProduct";
+import useCreateProduct from "../Hooks/useCreateProduct";
+import Loading from "../../ui/Loading";
 
-function CreateProductsForm() {
+function CreateProductsForm({ onClose }) {
     const {
         register,
         handleSubmit,
         formState: { errors },
+        reset,
     } = useForm();
-    const onSubmit = (data) => console.log(data);
+    const [tags, setTags] = useState([]);
+    const { categories } = useCategories();
+    const { createProduct, isCreating } = useCreateProduct();
+    const onSubmit = (data) => {
+        const newProduct = {
+            ...data,
+            tags,
+        };
+        console.log(data);
+        createProduct(newProduct, {
+            onSuccess: () => {
+                onClose();
+                reset();
+            },
+        });
+    };
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
             <TextFied
@@ -53,9 +76,26 @@ function CreateProductsForm() {
                 }}
                 errors={errors}
             />
-            <button type="submit" className="btn btn--primary w-full">
-                Confirm
-            </button>
+            <RHFSelect
+                label="Category"
+                name="category"
+                register={register}
+                options={categories}
+                required
+            />
+            <div>
+                <label className="mb-2 block text-secondary-700">Tag</label>
+                <TagsInput value={tags} onChange={setTags} name="tags" />
+            </div>
+            <div className="!mt-8">
+                {isCreating ? (
+                    <Loading />
+                ) : (
+                    <button type="submit" className="btn btn--primary w-full">
+                        Confirm
+                    </button>
+                )}
+            </div>
         </form>
     );
 }

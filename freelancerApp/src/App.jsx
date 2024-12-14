@@ -2,20 +2,19 @@
 //یه ابزاری هست که شامل ریکت کوئری و اینا هست، یه ابزاری هست واسه مدیریت استیت ها
 import { Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
-// import Auth from "./pages/Auth";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "react-hot-toast";
-// import CompleteProfile from "./pages/CompleteProfile";
+
 import AppLayout from "./ui/AppLayout";
 import OwnerDashboard from "./pages/OwnerDashboard";
 
-// import ProductsList from "./pages/Product";
-// import ProductsListTable from "./pages/Products";
 import Products from "./pages/Products";
 import Product from "./pages/Product";
 
+
 function App() {
     const queryClient = new QueryClient();
+   
     return (
         <>
             <QueryClientProvider client={queryClient}>

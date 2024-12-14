@@ -3,7 +3,7 @@ import { ownerProducts } from "../../services/ownerProducts";
 
 export default function useOwnerProducts() {
     const { data, isLoading } = useQuery({
-        queryKey: ["getproducts"],
+        queryKey: ["products"],
         queryFn: ownerProducts,
         retry: false,
     });
