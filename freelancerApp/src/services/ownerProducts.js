@@ -43,6 +43,6 @@ export async function singleProduct(id) {
         // console.log(response.data);
         return response.data;
     } catch (error) {
-        console.error("To Do List not found", error);
+        console.error("The Product not found", error);
     }
 }

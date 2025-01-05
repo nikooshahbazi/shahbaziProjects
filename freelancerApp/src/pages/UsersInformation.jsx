@@ -1,11 +1,10 @@
-import React from "react";
+import UsersInfoList from "../features/UsersInfo/UsersInfoList";
 
 function UsersInformation() {
     return (
         <div>
-            <span>Users Information</span>
+            <UsersInfoList />
         </div>
     );
 }
-
 export default UsersInformation;

@@ -11,6 +11,7 @@ import OwnerDashboard from "./pages/OwnerDashboard";
 import Products from "./pages/Products";
 import Product from "./pages/Product";
 import UsersInformation from "./pages/UsersInformation";
+import SingleUserinformation from "./pages/SingleUserinformation";
 
 function App() {
     const queryClient = new QueryClient();
@@ -41,6 +42,10 @@ function App() {
                         <Route
                             path="users-info"
                             element={<UsersInformation />}
+                        />
+                        <Route
+                            path="/owner/users/:id"
+                            element={<SingleUserinformation />}
                         />
                     </Route>
                 </Routes>

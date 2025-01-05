@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 export default function useSingleProduct() {
     const { id } = useParams();
     if (!id) {
-        throw new Error("Product ID is undefined");
+        throw new Error("Product ID is not undefined");
     }
     const { data, isLoading } = useQuery({
         queryKey: ["product", id],

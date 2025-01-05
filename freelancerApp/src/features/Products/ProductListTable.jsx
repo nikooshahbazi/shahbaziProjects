@@ -8,8 +8,8 @@ import { TbPencilMinus } from "react-icons/tb";
 import Modal from "../../component/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import useRemoveProduct from "../Hooks/useRemoveProduct";
-import CreateProductsForm from "../Products/CreateProductsForm";
-import ToggleProductStatus from "../Products/ToggleProductStatus";
+import CreateProductsForm from "./CreateProductsForm";
+import ToggleProductStatus from "./ToggleProductStatus";
 import { Link } from "react-router-dom";
 
 function ProductListTable() {
