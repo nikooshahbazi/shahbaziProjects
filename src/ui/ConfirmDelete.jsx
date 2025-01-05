@@ -2,7 +2,7 @@ function ConfirmDelete({ resourceName, onClose, disabled, onConfirm }) {
     return (
         <div>
             <h2 className="font-bold text-base mb-8">
-                آیا از حذف {resourceName} مطمین هستید؟
+                Are you sure for deleting {resourceName}?
             </h2>
 
             <div className="flex justify-between items-center gap-x-16">
@@ -11,14 +11,14 @@ function ConfirmDelete({ resourceName, onClose, disabled, onConfirm }) {
                     onClick={onClose}
                     disabled={disabled}
                 >
-                    لغو
+                    Cancel
                 </button>
                 <button
                     className="btn btn--danger  flex-1 py-3"
                     onClick={onConfirm}
                     disabled={disabled}
                 >
-                    تایید
+                    Confirm
                 </button>
             </div>
         </div>

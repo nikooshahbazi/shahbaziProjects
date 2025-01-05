@@ -8,8 +8,8 @@ import { TbPencilMinus } from "react-icons/tb";
 import Modal from "../../component/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import useRemoveProduct from "../Hooks/useRemoveProduct";
-import CreateProductsForm from "../Products/CreateProductsForm";
-import ToggleProductStatus from "../Products/ToggleProductStatus";
+import CreateProductsForm from "./CreateProductsForm";
+import ToggleProductStatus from "./ToggleProductStatus";
 import { Link } from "react-router-dom";
 
 function ProductListTable() {
@@ -54,8 +54,8 @@ function ProductListTable() {
                     <th>Price</th>
                     <th>Image</th>
                     <th>Stock</th>
+                    <th>Comments</th>
                     <th>Operation</th>
-                    <th>Requests</th>
                 </Table.Header>
 
                 <Table.Body>
@@ -97,6 +97,13 @@ function ProductListTable() {
                                 <ToggleProductStatus product={productlist} />
                             </td>
                             <td>
+                                {/* {console.log(productlist.id)} */}
+                                <Link to={`/owner/products/${productlist.id}`}>
+                                    {/* {console.log(productlist.id)} */}
+                                    <HiEye className="w-5 h-5 text-primary-800" />
+                                </Link>
+                            </td>
+                            <td>
                                 <div className="flex items-center gap-x-4">
                                     <button
                                         onClick={() =>
@@ -118,13 +125,6 @@ function ProductListTable() {
                                     </button>
                                 </div>
                             </td>
-                            <td>
-                                {/* {console.log(productlist.id)} */}
-                                <Link to={productlist.id}>
-                                    {/* {console.log(productlist.id)} */}
-                                    <HiEye className="w-5 h-5 text-primary-800" />
-                                </Link>
-                            </td>
                         </Table.Row>
                     ))}
                 </Table.Body>
@@ -132,7 +132,7 @@ function ProductListTable() {
 
             <Modal
                 open={isEditOpen}
-                title={`ویرایش ${selectedItem?.title}`}
+                title={`Edit ${selectedItem?.title}`}
                 onClose={() => setIsEditOpen(false)}
             >
                 <CreateProductsForm onClose={() => setIsEditOpen(false)} />
