@@ -10,11 +10,11 @@ import OwnerDashboard from "./pages/OwnerDashboard";
 
 import Products from "./pages/Products";
 import Product from "./pages/Product";
-
+import UsersInformation from "./pages/UsersInformation";
 
 function App() {
     const queryClient = new QueryClient();
-   
+
     return (
         <>
             <QueryClientProvider client={queryClient}>
@@ -34,7 +34,14 @@ function App() {
                         />
                         <Route path="dashboard" element={<OwnerDashboard />} />
                         <Route path="products" element={<Products />} />
-                        <Route path="products/:id" element={<Product />} />
+                        <Route
+                            path="/owner/products/:id"
+                            element={<Product />}
+                        />
+                        <Route
+                            path="users-info"
+                            element={<UsersInformation />}
+                        />
                     </Route>
                 </Routes>
             </QueryClientProvider>

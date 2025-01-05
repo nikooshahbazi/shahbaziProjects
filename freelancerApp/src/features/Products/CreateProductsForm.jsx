@@ -21,7 +21,7 @@ function CreateProductsForm({ onClose }) {
         const newProduct = {
             ...data,
             tags,
-        };
+        }; 
         console.log(data);
         createProduct(newProduct, {
             onSuccess: () => {

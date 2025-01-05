@@ -1,4 +1,4 @@
-import ProductListTable from "../features/productList/ProductListTable";
+import ProductListTable from "../features/productTable/ProductListTable";
 import ProductsHeader from "../features/Products/ProductsHeader";
 
 function Products() {

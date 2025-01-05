@@ -8,7 +8,7 @@ export default function useCreateProduct() {
         mutationFn: createNewProduct,
         onSuccess: (data) => {
             console.log(data);
-            toast.success(`your product created: + ${data.title}`);
+            toast.success(`your product created: + ${data?.title}`);
             queryClient.invalidateQueries({
                 queryKey: ["products"],
             });

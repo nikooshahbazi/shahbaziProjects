@@ -1,4 +1,4 @@
-import { HiCollection, HiHome } from "react-icons/hi";
+import { HiCollection, HiHome, HiUser } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
 
 function SideBar() {
@@ -13,6 +13,10 @@ function SideBar() {
                     <NavlinkCustom to="/owner/Products">
                         <HiCollection />
                         <span>Products</span>
+                    </NavlinkCustom>
+                    <NavlinkCustom to="/owner/users-info">
+                        <HiUser />
+                        <span> Users Information</span>
                     </NavlinkCustom>
                 </li>
             </ul>

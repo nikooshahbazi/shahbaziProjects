@@ -3,11 +3,14 @@ import Pagination from "../../component/Pagination";
 import Loading from "../../ui/Loading";
 import Table from "../../ui/Table";
 import useOwnerProducts from "../Hooks/useOwnerProducts";
-import { HiOutlineTrash } from "react-icons/hi";
+import { HiEye, HiOutlineTrash } from "react-icons/hi";
 import { TbPencilMinus } from "react-icons/tb";
 import Modal from "../../component/Modal";
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import useRemoveProduct from "../Hooks/useRemoveProduct";
+import CreateProductsForm from "../Products/CreateProductsForm";
+import ToggleProductStatus from "../Products/ToggleProductStatus";
+import { Link } from "react-router-dom";
 
 function ProductListTable() {
     const [isEditOpen, setIsEditOpen] = useState(false);
@@ -15,7 +18,7 @@ function ProductListTable() {
     const [selectedItem, setSelectedItem] = useState();
     const { isLoading, data } = useOwnerProducts();
     const [currentPage, setCurrentPage] = useState(1);
-    const { removeProduct, isDeleting } = useRemoveProduct();
+    const { removeProduct } = useRemoveProduct();
     const [openImg, setOpenImg] = useState(false);
 
     if (isLoading) return <Loading />;
@@ -49,8 +52,9 @@ function ProductListTable() {
                     <th>Description </th>
                     <th>Category </th>
                     <th>Price</th>
-                    {/* <th>Image</th>
-                    <th>Stock</th> */}
+                    <th>Image</th>
+                    <th>Stock</th>
+                    <th>Comments</th>
                     <th>Operation</th>
                 </Table.Header>
 
@@ -71,7 +75,7 @@ function ProductListTable() {
                             </td>
                             <td>{productlist.category}</td>
                             <td>${productlist.price}</td>
-                            {/* <td>
+                            <td>
                                 {productlist.images.length > 0 && (
                                     <img
                                         key={index}
@@ -88,19 +92,17 @@ function ProductListTable() {
                                         }}
                                     />
                                 )}
-                            </td> */}
-                            {/* <td>
-                                {productlist.availabilityStatus ===
-                                "Low Stock" ? (
-                                    <span className="badge badge--danger">
-                                        less
-                                    </span>
-                                ) : (
-                                    <span className="badge badge--success">
-                                        more
-                                    </span>
-                                )}
-                            </td> */}
+                            </td>
+                            <td>
+                                <ToggleProductStatus product={productlist} />
+                            </td>
+                            <td>
+                                {/* {console.log(productlist.id)} */}
+                                <Link to={`/owner/products/${productlist.id}`}>
+                                    {/* {console.log(productlist.id)} */}
+                                    <HiEye className="w-5 h-5 text-primary-800" />
+                                </Link>
+                            </td>
                             <td>
                                 <div className="flex items-center gap-x-4">
                                     <button
@@ -130,10 +132,10 @@ function ProductListTable() {
 
             <Modal
                 open={isEditOpen}
-                title={`ویرایش ${selectedItem?.title}`}
+                title={`Edit ${selectedItem?.title}`}
                 onClose={() => setIsEditOpen(false)}
             >
-                This is ...
+                <CreateProductsForm onClose={() => setIsEditOpen(false)} />
             </Modal>
             <Modal
                 open={isDeleteOpen}
