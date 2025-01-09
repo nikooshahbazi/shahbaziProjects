@@ -33,7 +33,7 @@ function ToggleProductStatus({ product }) {
             ) : (
                 <Toggle
                     enabled={enabled}
-                    label={enabled ? "more" : "zero"}
+                    label={enabled ? "Yes" : "No"}
                     onChange={toggleHandler}
                 />
             )}
