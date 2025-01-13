@@ -13,7 +13,6 @@ function AppLayout() {
             <Header />
             <SideBar />
             <div className="bg-secondary-100 p-8 overflow-y-auto">
-                
                 <div className="mx-auto max-w-full  flex flex-col gap-y-12">
                     <Outlet />
                 </div>
